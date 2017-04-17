@@ -7,37 +7,37 @@ import java.util.stream.Stream;
 /**
  * Created by Kirill on 15.04.2017.
  */
-public class Model implements GlobalVariables{
+public class Model implements GlobalVariables {
     private int secretValue;
-    private int minBarrier = MIN_VALUE ;
-    private int maxBarrier = MAX_VALUE ;
+    private int minBarrier = MIN_VALUE;
+    private int maxBarrier = MAX_VALUE;
     private List<Integer> allUserValues = new ArrayList<Integer>();
 
     public Model() {
-        secretValue = randValue(minBarrier,maxBarrier);
+        secretValue = randValue(minBarrier, maxBarrier);
     }
 
-    public int randValue(int minBarrier,int maxBarrier ){
-        return  minBarrier + (int)Math.round((Math.random()*(maxBarrier-minBarrier)));
+    public int randValue(int minBarrier, int maxBarrier) {
+        return minBarrier + (int) Math.round((Math.random() * (maxBarrier - minBarrier)));
     }
 
-    public boolean checkValue(int valueFromUser){
+    public boolean checkValue(int valueFromUser) {
         allUserValues.add(valueFromUser);
-        if(valueFromUser == secretValue) {
-           return true;
+        if (valueFromUser == secretValue) {
+            return true;
         }
-        if(valueFromUser > secretValue) {
-           maxBarrier = valueFromUser-1;
-           return false;
-        }
-        else{
-           minBarrier = valueFromUser+1;
-           return false;
+        if (valueFromUser > secretValue) {
+            maxBarrier = valueFromUser - 1;
+            return false;
+        } else {
+            minBarrier = valueFromUser + 1;
+            return false;
         }
     }
-   public int getMinBarrier(){
-       return minBarrier;
-   }
+
+    public int getMinBarrier() {
+        return minBarrier;
+    }
 
     public int getSecretValue() {
         return secretValue;
@@ -51,6 +51,8 @@ public class Model implements GlobalVariables{
         return allUserValues;
     }
 
-    public void setSecretValue(int secretValue){this.secretValue = secretValue;}
+    public void setSecretValue(int secretValue) {
+        this.secretValue = secretValue;
+    }
 
 }
