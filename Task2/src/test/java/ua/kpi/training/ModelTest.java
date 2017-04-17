@@ -9,14 +9,14 @@ import static org.junit.Assert.*;
  */
 public class ModelTest {
     @Test
-    public void checkForRandomValueSix()  {
+    public void checkForRandomValueSix() {
         int minBarrier = 6;
         int maxBarrier = 6;
         int expectedValue = 6;
 
         int actualRandValue;
         Model model = new Model();
-        actualRandValue = model.randValue(minBarrier,maxBarrier);
+        actualRandValue = model.randValue(minBarrier, maxBarrier);
         assertEquals(expectedValue, actualRandValue);
     }
 
@@ -33,8 +33,9 @@ public class ModelTest {
             assertTrue(actualRandValue >= minBarrier && actualRandValue <= maxBarrier);
         }
     }
+
     @Test
-    public void testCheckValueTrue(){
+    public void testCheckValueTrue() {
         int valueFromUser = 21;
         int secretValue = 21;
         boolean expectedValue = true;
@@ -47,7 +48,7 @@ public class ModelTest {
     }
 
     @Test
-    public void testCheckValueLarger(){
+    public void testCheckValueLarger() {
         int valueFromUser = 37;
         int secretValue = 21;
         boolean expectedValue = false;
@@ -60,7 +61,7 @@ public class ModelTest {
     }
 
     @Test
-    public void testCheckValueLess(){
+    public void testCheckValueLess() {
         int valueFromUser = 12;
         int secretValue = 21;
         boolean expectedValue = false;
