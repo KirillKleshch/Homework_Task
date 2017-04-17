@@ -42,18 +42,13 @@ public class Controller implements GlobalVariables{
                     + View.SQUARE_BRACKET);
             sc.next();
         }
-        while(true){
-            valueFromUser = sc.nextInt();
-            if(valueFromUser < model.getMinBarrier() || valueFromUser > model.getMaxBarrier() ){
+        while((valueFromUser = sc.nextInt()) < model.getMinBarrier() || valueFromUser > model.getMaxBarrier()){
                 view.printMessage(View.WRONG_INPUT
                         + View.ENTER_MESSAGE
                         + model.getMinBarrier()
                         + View.SPACE + model.getMaxBarrier()
                         + View.SQUARE_BRACKET);
-            }
-            else{
-                break;
-            }
+
         }
         return valueFromUser;
     }
