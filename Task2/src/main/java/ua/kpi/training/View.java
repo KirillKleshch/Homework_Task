@@ -13,7 +13,7 @@ public class View {
     public static String SQUARE_BRACKET = "]";
     public static String ERROR = "Вы ввели не число.";
     public static String WRONG_INPUT = "Вы ввели число не из нужного диапазона.";
-    public static String SUCCESS = "ПОЗДРОВЛЯЕМ ВЫ УГАДАЛИ!!! ";
+    public static String SUCCESS = "ПОЗДРАВЛЯЕМ ВЫ УГАДАЛИ!!! ";
     public static String SECRET_VALUE = "Секретное число = ";
     public static String STATISTIC = "Ваша статистика : ";
 
