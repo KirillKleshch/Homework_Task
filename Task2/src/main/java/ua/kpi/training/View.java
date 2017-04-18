@@ -21,6 +21,45 @@ public class View {
         System.out.println(message);
     }
 
+    public void printEnterMessage(int minBarrier, int maxBarrier) {
+        StringBuffer buf = new StringBuffer();
+        buf.append(ENTER_MESSAGE)
+                .append(minBarrier)
+                .append(SPACE)
+                .append(maxBarrier)
+                .append(SQUARE_BRACKET
+                );
+        System.out.println(buf.toString());
+    }
+
+    public void printErrorMessage(int minBarrier, int maxBarrier) {
+        StringBuffer buf = new StringBuffer();
+        buf.append(ERROR)
+                .append(ENTER_MESSAGE)
+                .append(minBarrier)
+                .append(SPACE)
+                .append(maxBarrier)
+                .append(SQUARE_BRACKET
+                );
+        System.out.println(buf.toString());
+    }
+
+    public void printWrongInputMessage(int minBarrier, int maxBarrier) {
+        StringBuffer buf = new StringBuffer();
+        buf.append(WRONG_INPUT)
+                .append(ENTER_MESSAGE)
+                .append(minBarrier)
+                .append(SPACE)
+                .append(maxBarrier)
+                .append(SQUARE_BRACKET
+                );
+        System.out.println(buf.toString());
+    }
+
+    public void printMessageAndValue(String message, int value) {
+        System.out.println(message + value);
+    }
+
     public void printList(List<Integer> list) {
         list.stream().forEach(System.out::println);
     }

@@ -23,40 +23,20 @@ public class Controller implements GlobalVariables {
         while (!model.checkValue(getValueFromUser(sc))) ;
 
         view.printMessage(View.SUCCESS);
-        view.printMessage(View.SECRET_VALUE + model.getSecretValue());
+        view.printMessageAndValue(View.SECRET_VALUE , model.getSecretValue());
         view.printMessage(View.STATISTIC);
         view.printList(model.getAllUserValues());
     }
 
     public int getValueFromUser(Scanner sc) {
-        view.printMessage(
-                View.ENTER_MESSAGE
-                        + model.getMinBarrier()
-                        + View.SPACE
-                        + model.getMaxBarrier()
-                        + View.SQUARE_BRACKET
-        );
+        view.printEnterMessage(model.getMinBarrier(),model.getMaxBarrier());
         int valueFromUser;
         while (!sc.hasNextInt()) {
-            view.printMessage(
-                    view.ERROR
-                            + View.ENTER_MESSAGE
-                            + model.getMinBarrier()
-                            + View.SPACE
-                            + model.getMaxBarrier()
-                            + View.SQUARE_BRACKET
-            );
+            view.printErrorMessage(model.getMinBarrier(),model.getMaxBarrier());
             sc.next();
         }
         while ((valueFromUser = sc.nextInt()) < model.getMinBarrier() || valueFromUser > model.getMaxBarrier()) {
-            view.printMessage(
-                    View.WRONG_INPUT
-                            + View.ENTER_MESSAGE
-                            + model.getMinBarrier()
-                            + View.SPACE
-                            + model.getMaxBarrier()
-                            + View.SQUARE_BRACKET
-            );
+            view.printWrongInputMessage(model.getMinBarrier(),model.getMaxBarrier());
         }
         return valueFromUser;
     }
