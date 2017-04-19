@@ -21,8 +21,7 @@ public class Controller implements GlobalVariables {
     // The Work method
     public void processUser() {
         Scanner sc = new Scanner(System.in);
-        model.setSecretValue(TestSequenceOfNumbers.TENRH_NUMBER.getValue());
-        while (!model.checkValue(getValueFromUser()));
+        while (!model.checkValue(getValueFromUser(sc))) ;
 
         view.printMessage(View.SUCCESS);
         view.printMessageAndValue(View.SECRET_VALUE, model.getSecretValue());
@@ -33,38 +32,37 @@ public class Controller implements GlobalVariables {
     public int getValueFromUser(Scanner sc) {
         view.printEnterMessage(model.getMinBarrier(), model.getMaxBarrier());
         int valueFromUser;
-        while(true) {
+        while (true) {
             while (!sc.hasNextInt()) {
                 view.printErrorMessage(model.getMinBarrier(), model.getMaxBarrier());
                 sc.next();
             }
             if ((valueFromUser = sc.nextInt()) < model.getMinBarrier() || valueFromUser > model.getMaxBarrier()) {
-                model.addToList(model.getAllUserValues(),valueFromUser);
+                model.addToList(model.getAllUserValues(), valueFromUser);
                 view.printWrongInputMessage(model.getMinBarrier(), model.getMaxBarrier());
             } else {
-                model.addToList(model.getAllUserValues(),valueFromUser);
+                model.addToList(model.getAllUserValues(), valueFromUser);
                 break;
             }
         }
         return valueFromUser;
     }
 
-    public int getValueFromUser() {
+    public int getValueFromUserByEnum() {
         view.printEnterMessage(model.getMinBarrier(), model.getMaxBarrier());
-        while ( counter < TestSequenceOfNumbers.values().length) {
+        while (counter < TestSequenceOfNumbers.values().length) {
             System.out.println(TestSequenceOfNumbers.values()[counter].getValue());
-            model.addToList(model.getAllUserValues(),TestSequenceOfNumbers.values()[counter].getValue());
+            model.addToList(model.getAllUserValues(), TestSequenceOfNumbers.values()[counter].getValue());
             if (TestSequenceOfNumbers.values()[counter].getValue() < model.getMinBarrier()
                     || TestSequenceOfNumbers.values()[counter].getValue() > model.getMaxBarrier()) {
                 view.printWrongInputMessage(model.getMinBarrier(), model.getMaxBarrier());
                 counter++;
-            }
-            else{
+            } else {
                 counter++;
                 break;
             }
         }
-        return TestSequenceOfNumbers.values()[counter-1].getValue();
+        return TestSequenceOfNumbers.values()[counter - 1].getValue();
     }
 
 }

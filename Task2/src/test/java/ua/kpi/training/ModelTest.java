@@ -72,4 +72,17 @@ public class ModelTest {
         actualValue = model.checkValue(valueFromUser);
         assertEquals(expectedValue, actualValue);
     }
+
+    @Test(timeout = 1000)
+    public void testCkeckController() {
+
+        Model model = new Model();
+        View view = new View();
+        Controller controller = new Controller(model, view);
+        model.setSecretValue(TestSequenceOfNumbers.TENRH_NUMBER.getValue());
+
+        while (!model.checkValue(controller.getValueFromUserByEnum())) ;
+
+
+    }
 }
