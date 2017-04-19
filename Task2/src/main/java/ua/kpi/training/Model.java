@@ -20,9 +20,11 @@ public class Model implements GlobalVariables {
     public int randValue(int minBarrier, int maxBarrier) {
         return minBarrier + (int) Math.round((Math.random() * (maxBarrier - minBarrier)));
     }
+    public void addToList(List<Integer> list, int valueFromUser){
+        list.add(valueFromUser);
+    }
 
     public boolean checkValue(int valueFromUser) {
-        allUserValues.add(valueFromUser);
         if (valueFromUser == secretValue) {
             return true;
         }
