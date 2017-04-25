@@ -2,7 +2,6 @@ package ua.kpi.training.view;
 
 import ua.kpi.training.controller.Notebook;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,6 +10,8 @@ import java.util.List;
 public class View {
     public static String ERROR = "Ви ввели не правильные данные";
     public static String ERROR_GROUP = "Ви ввели не существующую группу";
+    public static String SUCCESS = "Абонент занесен в записную книгу";
+    public static String BEGIN = "Занесите в записную книгу нового абанента : ";
     static String ENTER_NAME = "Введите имя";
     static String ENTER_SURNAME = "Введите фамилию";
     static String ENTER_PATRONYMIC = "Введите отчество";
