@@ -17,10 +17,10 @@ public class Model {
         addressBook.add(newContact);
     }
 
-    public Notebook getContact(String name, String surname) {
-        for (Notebook addressPage : addressBook) {
-            if (addressPage.getName().equals(name) && addressPage.getSurname().equals(surname)) {
-                return addressPage;
+    public Notebook getContact(String nickName) {
+        for (Notebook note : addressBook) {
+            if (note.getNickName().equals(nickName)) {
+                return note;
             }
         }
         return null;
