@@ -3,7 +3,6 @@ package ua.kpi.training.controller;
 import ua.kpi.training.model.Model;
 import ua.kpi.training.view.View;
 
-
 import java.util.Scanner;
 
 /**
@@ -21,7 +20,8 @@ public class Controller {
     public void processUser() {
         Scanner scanner = new Scanner(System.in);
         Notebook notebook = new Notebook(scanner, view);
-        notebook.inputNote();
+        notebook.fillData();
         model.addContact(notebook);
+        view.printList(model.getAddressBook());
     }
 }
