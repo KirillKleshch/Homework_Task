@@ -12,6 +12,8 @@ public class View {
     public static String ERROR_GROUP = "Ви ввели не существующую группу";
     public static String SUCCESS = "Абонент занесен в записную книгу";
     public static String BEGIN = "Занесите в записную книгу нового абанента : ";
+    public static String YES = "Да";
+    public static String ASK_FOR_CONSENT = "Если хотите внести нового абонента введите \"Да\", иначе любое другое слово";
     static String ENTER_NAME = "Введите имя";
     static String ENTER_SURNAME = "Введите фамилию";
     static String ENTER_PATRONYMIC = "Введите отчество";
@@ -30,7 +32,7 @@ public class View {
     static String ENTER_BUILDING = "Введите номер дома";
     static String ENTER_FLAT = "Введите номер квартиры";
     public String CONTACT_NUMBER = "Контакт номер : ";
-    public String LINE ="---------------------------------";
+    public String LINE = "---------------------------------";
     public static String SPACE = " ";
     public static String DOT = ".";
     public static String COMMA = ",";
@@ -39,9 +41,9 @@ public class View {
         print(ERROR);
     }
 
-    public void print(String...message) {
+    public void print(String... message) {
         StringBuilder builder = new StringBuilder(message.length);
-        for(String value : message){
+        for (String value : message) {
             builder.append(value).append(SPACE);
         }
         System.out.println(builder.toString());
@@ -49,7 +51,7 @@ public class View {
 
     public void printList(List<Notebook> list) {
         list.stream().forEach((note) -> {
-                    print(CONTACT_NUMBER,String.valueOf(list.indexOf(note)+1));
+                    print(CONTACT_NUMBER, String.valueOf(list.indexOf(note) + 1));
                     print(note.getInformation());
                     print(LINE);
                 }
