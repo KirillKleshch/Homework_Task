@@ -95,7 +95,7 @@ public class Notebook {
     }
 
     private String createAddress(String index, String city, String street, String building, int flat) {
-        StringBuilder result = new StringBuilder(5);
+        StringBuilder result = new StringBuilder();
         result.append(index).append(View.SPACE)
                 .append(city).append(View.SPACE)
                 .append(street).append(View.SPACE).append(building)
