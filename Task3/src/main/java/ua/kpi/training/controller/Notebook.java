@@ -57,7 +57,7 @@ public class Notebook {
         this.skype = utility.getString(RegExp.SKYPE_NICK_REGEXP, DefaultEnterMessages.SKYPE);
         this.nickName = utility.getString(RegExp.SKYPE_NICK_REGEXP, DefaultEnterMessages.NICKNAME);
         this.group = utility.getGroup(RegExp.GROUP_REGEXP);
-        this.index = utility.getString(RegExp.INDEX_REGEXP,DefaultEnterMessages.INDEX);
+        this.index = utility.getString(RegExp.INDEX_REGEXP, DefaultEnterMessages.INDEX);
         this.city = utility.getString(RegExp.CITY_STREET_REGEXP, DefaultEnterMessages.CITY);
         this.street = utility.getString(RegExp.CITY_STREET_REGEXP, DefaultEnterMessages.STREET);
         this.building = utility.getString(RegExp.BUILDING_REGEXP, DefaultEnterMessages.BUILDING);
@@ -80,7 +80,7 @@ public class Notebook {
     }
 
     public String getInformation() {
-        return concatenate(surname,name,patronymic, fullName,age, nickName, comment,
+        return concatenate(surname, name, patronymic, fullName, age, nickName, comment,
                 skype, group.getGroupName(), cellPhone1, localPhone, email, skype,
                 address, timeCreation.toString(), timeLastModification.toString());
     }
@@ -93,7 +93,8 @@ public class Notebook {
                 .toString();
         return result;
     }
-    private  String createAddress(String index, String city, String street, String building, int flat){
+
+    private String createAddress(String index, String city, String street, String building, int flat) {
         StringBuilder result = new StringBuilder(5);
         result.append(index).append(View.SPACE)
                 .append(city).append(View.SPACE)
@@ -105,9 +106,9 @@ public class Notebook {
 
     private String concatenate(String... fields) {
         StringBuilder result = new StringBuilder(fields.length);
-        for (int i = 0; i < fields.length;i++) {
+        for (int i = 0; i < fields.length; i++) {
             result.append(fields[i]);
-            if(i != fields.length-1) {
+            if (i != fields.length - 1) {
                 result.append('\n');
             }
         }
