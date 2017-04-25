@@ -19,9 +19,16 @@ public class Controller {
 
     public void processUser() {
         Scanner scanner = new Scanner(System.in);
-        Notebook notebook = new Notebook(scanner, view);
-        notebook.fillData();
-        model.addContact(notebook);
-        view.printList(model.getAddressBook());
+        Notebook notebook;
+        view.print(View.ASK_FOR_CONSENT);
+        while (scanner.nextLine().equalsIgnoreCase(View.YES)) {
+            notebook = new Notebook(scanner, view);
+            view.print(View.BEGIN);
+            notebook.fillData();
+            model.addContact(notebook);
+            view.print(View.SUCCESS);
+            view.print(View.ASK_FOR_CONSENT);
+        }
+        view.printList(model.getNoteBook());
     }
 }
