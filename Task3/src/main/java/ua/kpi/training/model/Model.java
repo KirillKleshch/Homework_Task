@@ -11,21 +11,22 @@ import java.util.List;
 
 public class Model {
 
-    private List<Notebook> addressBook = new ArrayList<>();
+    private List<Notebook> noteBook = new ArrayList<>();
 
     public void addContact(Notebook newContact) {
-        addressBook.add(newContact);
+        //newContact.getNickName()
+        noteBook.add(newContact);
     }
 
     public Notebook getContact(String nickName) {
-        for (Notebook note : addressBook) {
+        for (Notebook note : noteBook) {
             if (note.getNickName().equals(nickName)) {
                 return note;
             }
         }
         return null;
     }
-    public List<Notebook> getAddressBook() {
-        return addressBook;
+    public List<Notebook> getNoteBook() {
+        return noteBook;
     }
 }
