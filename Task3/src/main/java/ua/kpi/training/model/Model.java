@@ -26,6 +26,7 @@ public class Model {
         }
         return null;
     }
+
     public List<Notebook> getNoteBook() {
         return noteBook;
     }
