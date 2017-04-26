@@ -14,6 +14,7 @@ public class View {
     public static String BEGIN = "Занесите в записную книгу нового абанента : ";
     public static String YES = "Да";
     public static String ASK_FOR_CONSENT = "Если хотите внести нового абонента введите \"Да\", иначе любое другое слово";
+    public static String ERROR_NICK = "Такой ник уже существует вы должны ввести другой ник";
     static String ENTER_NAME = "Введите имя";
     static String ENTER_SURNAME = "Введите фамилию";
     static String ENTER_PATRONYMIC = "Введите отчество";
