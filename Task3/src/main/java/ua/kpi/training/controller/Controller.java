@@ -1,6 +1,7 @@
 package ua.kpi.training.controller;
 
 import ua.kpi.training.model.Model;
+import ua.kpi.training.model.ReMeetingNickNameException;
 import ua.kpi.training.view.View;
 
 import java.util.Scanner;
@@ -25,7 +26,15 @@ public class Controller {
             notebook = new Notebook(scanner, view);
             view.print(View.BEGIN);
             notebook.fillData();
-            model.addContact(notebook);
+            while(true) {
+                try {
+                    model.addContact(notebook);
+                    break;
+                } catch (ReMeetingNickNameException ex) {
+                    view.print(ex.getMessage());
+                    notebook.setNickName();
+                }
+            }
             view.print(View.SUCCESS);
             view.print(View.ASK_FOR_CONSENT);
         }
