@@ -35,6 +35,7 @@ public class Notebook {
     private String address;
     private final Date timeCreation = Calendar.getInstance().getTime();
     private Date timeLastModification;
+    static Utility utility;
 
     public Notebook(Scanner scanner, View view) {
         this.scanner = scanner;
@@ -42,7 +43,7 @@ public class Notebook {
     }
 
     public void fillData() {
-        Utility utility = new Utility(scanner, view);
+         utility = new Utility(scanner, view);
 
         this.name = utility.getString(RegExp.NAME_REGEXP, DefaultEnterMessages.NAME);
         this.surname = utility.getString(RegExp.NAME_REGEXP, DefaultEnterMessages.SURNAME);
@@ -78,10 +79,13 @@ public class Notebook {
     public String getNickName() {
         return this.nickName;
     }
+    public void setNickName(){
+        this.nickName = utility.getString(RegExp.SKYPE_NICK_REGEXP, DefaultEnterMessages.NICKNAME);
+    }
 
     public String getInformation() {
         return concatenate(surname, name, patronymic, fullName, age, nickName, comment,
-                skype, group.getGroupName(), cellPhone1, localPhone, email, skype,
+                skype, group.getGroupName(), cellPhone1, localPhone, cellPhone2, email, skype,
                 address, timeCreation.toString(), timeLastModification.toString());
     }
 
