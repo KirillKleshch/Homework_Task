@@ -112,7 +112,7 @@ public class Notebook {
         StringBuilder result = new StringBuilder(fields.length);
         for (int i = 0; i < fields.length; i++) {
             result.append(fields[i]);
-            if (i != fields.length - 1) {
+            if (i != fields.length - 1 && !fields[i].isEmpty()) {
                 result.append('\n');
             }
         }
